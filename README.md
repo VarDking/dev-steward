@@ -10,15 +10,15 @@ dev-steward does support windows.
     if you have not installed node
     
     ```
-       wget https://raw.githubusercontent.com/vardking/dev-steward/main.sh | bash
+       wget https://raw.githubusercontent.com/vardking/dev-steward/steward.sh | bash
     
     ```
 
     if you have nodejs installed
 
     ```
-        git clone https://www.github.com/vardking/dev-steward 
-        npm build
+        git clone https://www.github.com/vardking/dev-steward.git
+        npm install
     ```
     or     
 
@@ -31,6 +31,6 @@ dev-steward does support windows.
    fori example:
    
    ```
-    ds install node    # install lates stable version nodejs
+    ds install node    # install latest stable version nodejs
 
    ```
