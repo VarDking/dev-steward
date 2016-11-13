@@ -3,11 +3,13 @@
 . lib/common.sh
 
 PWD=$(pwd)
-TMP_DIR="tmp"
+TMP_DIR="$PWD/tmp"
 PACKAGE_DIR="$PWD/packages"
 REDIS_RELEASES_URL="http://download.redis.io/releases/"
 
 DEV_PRFIX=${DEV_PRFIX-"/usr/opt/dep_env"}
+
+assure_dir $TMP_DIR $PACKAGE_DIR
 
 show_versions(){
     for version in $@
@@ -48,6 +50,7 @@ redis_path(){
 
 download_redis(){
    local version=$1
+
    if [ -z $version ];then
        version="stable"
        log_warn "no version specified, default value is \"stable\""
@@ -60,13 +63,17 @@ download_redis(){
 
    log_info "redis file is ${file_name}"
 
+   if [ -f ${temp_file_path} ];then
+       rm -f ${temp_file_path}
+   fi
+
    if [ -f ${local_file_path} ];then
         log_info "redis package exist"
    else
         log_info "downloading redis package..."
-        wget -P ${TMP_DIR} $remote_file_path
-        log_info "download complete"
+        wget -c -O ${temp_file_path} $remote_file_path
         mv ${temp_file_path} ${local_file_path}
+        log_info "download complete"
    fi 
 }
 
