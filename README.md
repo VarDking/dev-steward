@@ -1,6 +1,6 @@
 ###Develop Environment Steward
 Install develop environment onekey. 
-Switch soft versions in a easy way.
+Switch soft versions in an easy way.
 Insipired by nvm.
 
 ###Note

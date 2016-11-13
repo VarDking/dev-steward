@@ -1,4 +1,4 @@
 #!/bin/bash
-. lib/dev-steward.sh
+. lib/redis.sh
 
 show_redis_versions
