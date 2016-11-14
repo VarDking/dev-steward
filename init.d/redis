@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Written by Mr.chen
+
+#source config file 
+if [[ -s /etc/conf.d/redis ]] ; then
+      source /etc/conf.d/redis
+fi
+
+port=${port-6379}
+prefix=${prefix-/usr/local}
+redis-server="${prefix}/bin/redis-server"
+redis-cli="${prefix}/bin/redis-cli"
+

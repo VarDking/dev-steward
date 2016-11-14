@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# written by Mr.chen.
+
 # format time
 now(){
     echo `date +"%Y-%m-%d %H:%M:%S"`
@@ -32,4 +34,9 @@ assure_dir(){
     do
         mkdir -p $path
     done
+}
+
+# universal decompress method
+decompress(){
+    echo ""
 }
