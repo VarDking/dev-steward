@@ -36,7 +36,9 @@ assure_dir(){
     done
 }
 
-# universal decompress method
-decompress(){
-    echo ""
+# detect root permission
+require_root_permission(){
+    if [ "$(id -u)" -ne 0 ];then
+        log_error "root permission is required"
+    fi
 }

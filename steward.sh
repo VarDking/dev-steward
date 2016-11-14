@@ -4,15 +4,13 @@
 
 set -e
 
-. lib/common.sh
-. lib/redis.sh
+. bin/common.sh
+. bin/redis.sh
 
 VERSION="0.1.0"
 
-# detect root permission
-if [ $(id -u) -ne 0 ];then
-    log_error "root permission is required"
-fi
+#detect root
+require_root_permission
 
 usage(){
     cat <<-EOF
@@ -43,5 +41,3 @@ EOF
 ds_version(){
     log_info $VERSION
 }
-
-
